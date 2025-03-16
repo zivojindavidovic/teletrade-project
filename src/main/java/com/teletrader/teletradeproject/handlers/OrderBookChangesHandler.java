@@ -4,6 +4,7 @@ import com.teletrader.teletradeproject.controllers.v1.stock.response.StockOrderB
 import com.teletrader.teletradeproject.services.StockOrderBookRetriever;
 import lombok.AllArgsConstructor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -13,6 +14,7 @@ public class OrderBookChangesHandler {
     private final SimpMessagingTemplate messagingTemplate;
     private final StockOrderBookRetriever stockOrderBookRetriever;
 
+    @Async
     public void handleOrderBookChanges(Long stockId) {
         StockOrderBookDTO orderBook = stockOrderBookRetriever.getOrderBookByStockId(stockId);
 
