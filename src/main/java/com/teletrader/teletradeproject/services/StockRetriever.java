@@ -7,4 +7,6 @@ import java.util.List;
 public interface StockRetriever {
 
     List<StockDTO> getAllStocks();
+
+    StockDTO getById(Long stockId);
 }

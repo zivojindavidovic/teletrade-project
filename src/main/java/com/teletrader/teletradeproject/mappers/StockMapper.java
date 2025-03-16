@@ -15,4 +15,11 @@ public class StockMapper {
                         .build()
                 ).toList();
     }
+
+    public static StockDTO toStockResponse(Stock stock) {
+        return StockDTO.builder()
+                .stockId(stock.getStockId())
+                .symbol(stock.getSymbol())
+                .build();
+    }
 }

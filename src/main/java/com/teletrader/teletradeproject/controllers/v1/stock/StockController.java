@@ -6,6 +6,7 @@ import com.teletrader.teletradeproject.services.StockRetriever;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +29,19 @@ public class StockController {
                         .errors(List.of())
                         .data(result)
                         .build()
+        );
+    }
+
+    @GetMapping("/{stockId}")
+    public ResponseEntity<Response<StockDTO>> getStockById(@PathVariable Long stockId) {
+        StockDTO result = stockRetriever.getById(stockId);
+
+        return ResponseEntity.ok(
+            Response.<StockDTO>builder()
+                    .success(true)
+                    .errors(List.of())
+                    .data(result)
+                    .build()
         );
     }
 }

@@ -1,6 +1,7 @@
 package com.teletrader.teletradeproject.services;
 
 import com.teletrader.teletradeproject.commands.GetAllStocksCommand;
+import com.teletrader.teletradeproject.commands.GetStockByIdCommand;
 import com.teletrader.teletradeproject.controllers.v1.stock.response.StockDTO;
 import com.teletrader.teletradeproject.mappers.StockMapper;
 import com.teletrader.teletradeproject.models.Stock;
@@ -14,11 +15,19 @@ import java.util.List;
 public class StockService implements StockRetriever{
 
     private final GetAllStocksCommand getAllStocksCommand;
+    private final GetStockByIdCommand getStockByIdCommand;
 
     @Override
     public List<StockDTO> getAllStocks() {
         List<Stock> stocks = getAllStocksCommand.execute();
 
         return StockMapper.toStocksResponse(stocks);
+    }
+
+    @Override
+    public StockDTO getById(Long stockId) {
+        Stock stock = getStockByIdCommand.execute(stockId);
+
+        return StockMapper.toStockResponse(stock);
     }
 }
