@@ -1,4 +1,4 @@
-package com.teletrader.teletradeproject.controllers.v1.order.request;
+package com.teletrader.teletradeproject.controllers.v1.order.response;
 
 import lombok.Builder;
 import lombok.Data;

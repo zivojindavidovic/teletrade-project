@@ -2,7 +2,7 @@ package com.teletrader.teletradeproject.services;
 
 import com.teletrader.teletradeproject.commands.SaveOrderCommand;
 import com.teletrader.teletradeproject.controllers.v1.order.request.OrderSaveDTO;
-import com.teletrader.teletradeproject.controllers.v1.order.request.OrderSaveResultDTO;
+import com.teletrader.teletradeproject.controllers.v1.order.response.OrderSaveResultDTO;
 import com.teletrader.teletradeproject.mappers.OrderMapper;
 import com.teletrader.teletradeproject.models.Order;
 import lombok.AllArgsConstructor;

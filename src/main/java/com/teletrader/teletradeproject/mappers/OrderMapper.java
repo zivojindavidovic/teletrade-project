@@ -1,6 +1,6 @@
 package com.teletrader.teletradeproject.mappers;
 
-import com.teletrader.teletradeproject.controllers.v1.order.request.OrderSaveResultDTO;
+import com.teletrader.teletradeproject.controllers.v1.order.response.OrderSaveResultDTO;
 import com.teletrader.teletradeproject.models.Order;
 
 public class OrderMapper {

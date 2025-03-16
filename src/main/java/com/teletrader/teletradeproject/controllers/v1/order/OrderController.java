@@ -1,7 +1,7 @@
 package com.teletrader.teletradeproject.controllers.v1.order;
 
 import com.teletrader.teletradeproject.controllers.v1.order.request.OrderSaveDTO;
-import com.teletrader.teletradeproject.controllers.v1.order.request.OrderSaveResultDTO;
+import com.teletrader.teletradeproject.controllers.v1.order.response.OrderSaveResultDTO;
 import com.teletrader.teletradeproject.controllers.v1.response.Response;
 import com.teletrader.teletradeproject.services.OrderPersistence;
 import jakarta.validation.Valid;
