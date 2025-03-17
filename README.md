@@ -49,3 +49,30 @@ Expected response:
 }
 
 The WebSocket should automatically update with the new order details.
+
+If validation fails API should return 400 response:
+Request body (JSON):
+{
+    "userId": 1,
+    "quantity": 1000,
+    "price": 173.99,
+    "type": "BUY"
+}
+
+Expected response:
+{
+    "success": false,
+    "errors": [
+        {
+            "key": "stockId",
+            "value": "StockID is required"
+        }
+    ],
+    "data": null
+}
+
+7. Additional API calls:
+Get all stocks: http://localhost:8070/api/v1/stocks
+Get single stock http://localhost:8070/api/v1/stocks/1
+
+8. Order book endpoint for specific stock is shown within index.html page 
