@@ -17,5 +17,6 @@ CREATE TABLE orders (
                         user_id BIGINT,
                         stock_id BIGINT,
                         FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
-                        FOREIGN KEY (stock_id) REFERENCES stock(stock_id) ON DELETE CASCADE
+                        FOREIGN KEY (stock_id) REFERENCES stock(stock_id) ON DELETE CASCADE,
+                        INDEX idx_orders_type (type)
 );
