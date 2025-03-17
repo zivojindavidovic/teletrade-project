@@ -9,5 +9,6 @@ import java.util.List;
 @Builder
 public class StockOrderBookDTO {
     private Long stockId;
-    private List<OrderDTO> orders;
+    private List<OrderDTO> buys;
+    private List<OrderDTO> sells;
 }
